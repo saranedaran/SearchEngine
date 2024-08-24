@@ -1,0 +1,70 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.form-row label {
+    margin-right: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+table {
+    width: 800px;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.pagination-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+
+.pagination-controls form {
+    margin: 0;
+}
+
+.pagination-controls button {
+    padding: 5px 15px;
+}
