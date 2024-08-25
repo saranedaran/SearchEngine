@@ -3,82 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Search</title>
+    <title>Selection Page</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Product Search</h1>
-        <form action="/search" method="post" class="form-inline">
-            <div class="form-row">
-                <label for="column">Select Attribute:</label>
-                <select name="column" id="column" required>
-                    <option value="sku">Product Id</option>
-                    <option value="label">Product Family</option>
-                    <option value="attribute21">Product Line</option>
-                    <option value="attribute19">Product Group</option>
-                    <option value="attribute10">Status</option>
-                    <option value="attribute11">Product Sub Group</option>
-                    <option value="attribute12">Stock</option>
-                    <option value="attribute13">Color</option>
-                </select>
+        <h1>Select Entity Type</h1>
+        <form action="/" method="post">
+            <div class="button-container">
+                <button type="submit" name="entity_type" value="p">Product</button>
+                <button type="submit" name="entity_type" value="c">Customer</button>
             </div>
-            <div class="form-row">
-                <label for="value">Value:</label>
-                <input type="text" name="value" id="value" placeholder="Enter value" required>
-            </div>
-            <button type="submit">Search</button>
         </form>
-
-        {% if table_rows %}
-        <h2>Search Results</h2>
-        <div class="table-container">
-            <table border="1" class="data-table">
-                <thead>
-                    <tr>
-                        <th>Product Id</th>
-                        <th>Product Family</th>
-                        <th>Product Line</th>
-                        <th>Product Group</th>
-                        <th>Status</th>
-                        <th>Product Sub Group</th>
-                        <th>Stock</th>
-                        <th>Color</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{ table_rows|safe }}
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Pagination Controls -->
-        <div class="pagination-controls">
-            {% if has_previous %}
-            <form action="/search" method="post" class="pagination-button">
-                <input type="hidden" name="column" value="{{ column }}">
-                <input type="hidden" name="value" value="{{ value }}">
-                <input type="hidden" name="page" value="{{ page - 1 }}">
-                <button type="submit">Previous</button>
-            </form>
-            {% endif %}
-            
-            {% if has_next %}
-            <form action="/search" method="post" class="pagination-button">
-                <input type="hidden" name="column" value="{{ column }}">
-                <input type="hidden" name="value" value="{{ value }}">
-                <input type="hidden" name="page" value="{{ page + 1 }}">
-                <button type="submit">Next</button>
-            </form>
-            {% endif %}
-        </div>
-        {% else %}
-        <p>No results found. Please try a different search.</p>
-        {% endif %}
-
-        {% if error_message %}
-        <p style="color:red;">{{ error_message }}</p>
-        {% endif %}
     </div>
 </body>
 </html>
