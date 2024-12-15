@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Search</h1>
+        <form id="searchForm" class="form-inline">
+            <div class="form-row">
+                <label for="column">Select Attribute:</label>
+                <select name="column" id="column" required>
+                    <option value="sku">Product Id</option>
+                    <option value="label">Product Family</option>
+                    <option value="attribute21">Product Line</option>
+                    <option value="attribute19">Product Group</option>
+                    <option value="attribute10">Status</option>
+                    <option value="attribute11">Product Sub Group</option>
+                    <option value="attribute12">Stock</option>
+                    <option value="attribute13">Color</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="value">Value:</label>
+                <input type="text" name="value" id="value" placeholder="Enter value" required>
+                <button type="submit">Search</button>
+            </div>
+        <br>
+        </form>
+        <div class="table-container">
+            <table id="resultsTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Product Family</th>
+                        <th>Product Line</th>
+                        <th>Product Group</th>
+                        <th>Status</th>
+                        <th>Product Sub Group</th>
+                        <th>Stock</th>
+                        <th>Color</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <br>
+            <div id="pagination" class="pagination">
+                <button id="prevPage" onclick="changePage(-1)">Previous</button>
+                <button id="nextPage" onclick="changePage(1)">Next</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
